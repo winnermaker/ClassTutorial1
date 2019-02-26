@@ -33,6 +33,11 @@ namespace Version_1_C
             }
         }
 
+        public bool IsDuplicate(string prArtistName)
+        {
+            return _ArtistList.ContainsKey(prArtistName);
+        }
+
         public string GetKey()
         {
             return name;
