@@ -40,7 +40,7 @@ namespace Version_1_C
             Close();
         }
 
-        public string getAnswer()
+        public string GetAnswer()
         {
             return answer;
         }
