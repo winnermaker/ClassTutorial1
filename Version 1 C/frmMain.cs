@@ -18,7 +18,7 @@ namespace Version_1_C
             InitializeComponent();
         }
 
-        private clsArtistList _ArtistList = new clsArtistList();     
+        private clsArtistList _ArtistList;   
 
         private void updateDisplay()
         {
