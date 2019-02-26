@@ -41,7 +41,7 @@ namespace Version_1_C
             // txtType
             // 
             this.txtType.Location = new System.Drawing.Point(194, 329);
-            this.txtType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtType.Margin = new System.Windows.Forms.Padding(6);
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(188, 31);
             this.txtType.TabIndex = 6;
@@ -58,7 +58,7 @@ namespace Version_1_C
             // txtHeight
             // 
             this.txtHeight.Location = new System.Drawing.Point(194, 267);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(6);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(188, 31);
             this.txtHeight.TabIndex = 5;
@@ -70,13 +70,12 @@ namespace Version_1_C
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(112, 44);
             this.Label5.TabIndex = 48;
-            this.Label5.Text = "Height";
-            this.Label5.Click += new System.EventHandler(this.Label5_Click);
+            this.Label5.Text = "Height";  
             // 
             // txtWidth
             // 
             this.txtWidth.Location = new System.Drawing.Point(194, 206);
-            this.txtWidth.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtWidth.Margin = new System.Windows.Forms.Padding(6);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(188, 31);
             this.txtWidth.TabIndex = 4;
@@ -89,6 +88,7 @@ namespace Version_1_C
             this.Label4.Size = new System.Drawing.Size(112, 44);
             this.Label4.TabIndex = 46;
             this.Label4.Text = "Width";
+            
             // 
             // frmPainting
             // 
@@ -100,7 +100,7 @@ namespace Version_1_C
             this.Controls.Add(this.txtHeight);
             this.Controls.Add(this.Label6);
             this.Controls.Add(this.txtType);
-            this.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.Margin = new System.Windows.Forms.Padding(12);
             this.Name = "frmPainting";
             this.Text = "Painting";
             this.Controls.SetChildIndex(this.txtType, 0);
@@ -112,11 +112,6 @@ namespace Version_1_C
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void Label5_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion

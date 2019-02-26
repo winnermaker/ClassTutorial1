@@ -20,10 +20,10 @@ namespace Version_1_C
                 _PhotoDialog = new frmPhotograph();
             }
 
-            _PhotoDialog.SetDetails(_Name, _Date, _Value);
+            _PhotoDialog.SetDetails(_Name, _Date, _Value, _Width, _Height, _Type);
             if (_PhotoDialog.ShowDialog() == DialogResult.OK)
             {
-                _PhotoDialog.GetDetails(ref _Name, ref _Date, ref _Value);
+                _PhotoDialog.GetDetails(ref _Name, ref _Date, ref _Value, ref _Width, ref _Height, ref _Type);
             }
         }
     }
