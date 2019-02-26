@@ -11,19 +11,19 @@ namespace Version_1_C
         private string _Type;
 
         [NonSerialized()]
-        private static frmPhotograph photoDialog;
+        private static frmPhotograph _PhotoDialog;
 
         public override void EditDetails()
         {
-            if (photoDialog == null)
+            if (_PhotoDialog == null)
             {
-                photoDialog = new frmPhotograph();
+                _PhotoDialog = new frmPhotograph();
             }
 
-            photoDialog.SetDetails(_Name, _Date, _Value);
-            if (photoDialog.ShowDialog() == DialogResult.OK)
+            _PhotoDialog.SetDetails(_Name, _Date, _Value);
+            if (_PhotoDialog.ShowDialog() == DialogResult.OK)
             {
-                photoDialog.GetDetails(ref _Name, ref _Date, ref _Value);
+                _PhotoDialog.GetDetails(ref _Name, ref _Date, ref _Value);
             }
         }
     }

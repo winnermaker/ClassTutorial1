@@ -11,19 +11,19 @@ namespace Version_1_C
         
 
         [NonSerialized()]
-        private static frmSculpture scluptureDialog;
+        private static frmSculpture _ScluptureDialog;
 
         public override void EditDetails()
         {
 
-            if (scluptureDialog == null)
+            if (_ScluptureDialog == null)
             {
-                scluptureDialog = new frmSculpture();
+                _ScluptureDialog = new frmSculpture();
             }
-            scluptureDialog.SetDetails(_Name, _Date, _Value);
-            if (scluptureDialog.ShowDialog() == DialogResult.OK)
+            _ScluptureDialog.SetDetails(_Name, _Date, _Value);
+            if (_ScluptureDialog.ShowDialog() == DialogResult.OK)
             {
-                scluptureDialog.GetDetails(ref _Name, ref _Date, ref _Value);
+                _ScluptureDialog.GetDetails(ref _Name, ref _Date, ref _Value);
             }
         }
     
