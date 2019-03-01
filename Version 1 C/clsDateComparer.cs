@@ -7,8 +7,8 @@ namespace Version_1_C
     {
         public int Compare(clsWork x, clsWork y)
         {
-            DateTime lcDateX = x.GetDate();
-            DateTime lcDateY = y.GetDate();
+            DateTime lcDateX = x.Date;
+            DateTime lcDateY = y.Date;
 
             return lcDateX.CompareTo(lcDateY);
         }

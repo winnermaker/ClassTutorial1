@@ -13,9 +13,17 @@ namespace Version_1_C
         [NonSerialized()]
         private static frmPainting _PaintDialog;
 
+        public float Width { get => _Width; set => _Width = value; }
+        public float Height { get => _Height; set => _Height = value; }
+        public string Type { get => _Type; set => _Type = value; }
+
         public override void EditDetails()
         {
             if (_PaintDialog == null)
+                _PaintDialog = new frmPainting();
+            _PaintDialog.SetDetails(this);
+
+            /*if (_PaintDialog == null)
             {
                 _PaintDialog = new frmPainting();
             }
@@ -23,7 +31,7 @@ namespace Version_1_C
             if(_PaintDialog.ShowDialog() == DialogResult.OK)
             {
                _PaintDialog.GetDetails(ref _Name, ref _Date, ref _Value, ref _Width, ref _Height, ref _Type);
-            }
+            }*/
         }
     }
 }

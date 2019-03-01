@@ -8,8 +8,8 @@ namespace Version_1_C
         public int Compare(clsWork x, clsWork y)
         {
      
-            string lcNameX = x.GetName();
-            string lcNameY = y.GetName();
+            string lcNameX = x.Name;
+            string lcNameY = y.Name;
 
             return lcNameX.CompareTo(lcNameY);
         }
