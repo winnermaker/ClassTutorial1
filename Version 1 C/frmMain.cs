@@ -32,8 +32,16 @@ namespace Version_1_C
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            _ArtistList.NewArtist();
-            updateDisplay();
+            try
+            { 
+                _ArtistList.NewArtist();
+                MessageBox.Show("Artist added!");
+                updateDisplay();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Duplicate Key!");
+            }
         }
 
         private void lstArtists_DoubleClick(object sender, EventArgs e)
@@ -50,7 +58,15 @@ namespace Version_1_C
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            _ArtistList.Save();
+            try
+            {
+                _ArtistList.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "File Save Error");
+            }
+            
             Close();
         }
 
@@ -72,7 +88,14 @@ namespace Version_1_C
         private void frmMain_Load(object sender, EventArgs e)
         {
             _ArtistList = clsArtistList.Retrieve();
-            updateDisplay();
+            if (_ArtistList.Count != 0)
+            {
+                updateDisplay();
+            }
+            else
+            {
+                MessageBox.Show(_ArtistList.ExMessage, "File Retrieve Error");
+            }
         }
     }
 }

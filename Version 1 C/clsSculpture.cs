@@ -1,5 +1,5 @@
 using System;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Version_1_C
 {
@@ -15,6 +15,7 @@ namespace Version_1_C
 
         public float Weight { get => _Weight; set => _Weight = value; }
         public string Material { get => _Material; set => _Material = value; }
+        public static frmSculpture ScluptureDialog { get => _ScluptureDialog; set => _ScluptureDialog = value; }
 
         public override void EditDetails()
         {

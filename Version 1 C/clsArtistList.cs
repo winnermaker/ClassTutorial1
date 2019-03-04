@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Version_1_C
 {
@@ -8,6 +8,9 @@ namespace Version_1_C
     public class clsArtistList : SortedList<string, clsArtist>
     {
         private const string _FileName = "gallery.xml";
+        private string _ExMessage;
+
+        public string ExMessage { get => _ExMessage; /*set => _ExMessage = value;*/ }
 
         public void EditArtist(string prKey)
         {
@@ -16,23 +19,26 @@ namespace Version_1_C
             if (lcArtist != null)
                 lcArtist.EditDetails();
             else
-                MessageBox.Show("Sorry no artist by this name");
+                //MessageBox.Show("Sorry no artist by this name");
+                throw new Exception();
+                
         }
        
         public void NewArtist()
         {
-            clsArtist lcArtist = new clsArtist(this);
+            clsArtist lcArtist = new clsArtist(this);            
             try
             {
                 if (lcArtist.Name != "")
                 {
                     Add(lcArtist.Name, lcArtist);
-                    MessageBox.Show("Artist added!");
+                    //MessageBox.Show("Artist added!");
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Duplicate Key!");
+                //MessageBox.Show("Duplicate Key!");
+                throw;
             }
         }
         
@@ -58,12 +64,13 @@ namespace Version_1_C
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "File Save Error");
+                //MessageBox.Show(e.Message, "File Save Error");
+                throw e;
             }
         }
 
         public static clsArtistList Retrieve()
-        {
+        {            
             clsArtistList lcArtistList;
             try
             {
@@ -72,15 +79,24 @@ namespace Version_1_C
                     new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                 lcArtistList = (clsArtistList)lcFormatter.Deserialize(lcFileStream);
-                lcFileStream.Close();                
+                lcFileStream.Close();
+                
             }
 
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "File Retrieve Error");
+                //MessageBox.Show(e.Message, "File Retrieve Error");  
                 lcArtistList = new clsArtistList();
+                lcArtistList._ExMessage = e.Message;
+                               
             }
+
             return lcArtistList;
+
+
+
+
+
         }
     }
 }

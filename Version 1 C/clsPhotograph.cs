@@ -1,5 +1,5 @@
 using System;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Version_1_C
 {
@@ -16,6 +16,7 @@ namespace Version_1_C
         public float Width { get => _Width; set => _Width = value; }
         public float Height { get => _Height; set => _Height = value; }
         public string Type { get => _Type; set => _Type = value; }
+        public static frmPhotograph PhotoDialog { get => _PhotoDialog; set => _PhotoDialog = value; }
 
         public override void EditDetails()
         {

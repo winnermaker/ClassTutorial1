@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 
 namespace Version_1_C
 {
@@ -22,7 +22,7 @@ namespace Version_1_C
             }
         }
        
-        public void DeleteWork(int prIndex)
+        /*public void DeleteWork(int prIndex)
         {
             if (prIndex >= 0 && prIndex < this.Count)
             {
@@ -31,7 +31,7 @@ namespace Version_1_C
                     this.RemoveAt(prIndex);
                 }
             }
-        }
+        }*/
         
         public void EditWork(int prIndex)
         {
@@ -42,7 +42,8 @@ namespace Version_1_C
             }
             else
             {
-                MessageBox.Show("Sorry no work selected #" + Convert.ToString(prIndex));
+                //MessageBox.Show("Sorry no work selected #" + Convert.ToString(prIndex));
+                throw new Exception();
             }
         }
 
