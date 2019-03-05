@@ -17,14 +17,14 @@ namespace Version_1_C
 
         //private clsArtistList _ArtistList;  
         //private clsWorksList _WorksList;
-        private byte _SortOrder; // 0 = Name, 1 = Date
+        //private byte _SortOrder; // 0 = Name, 1 = Date
         private clsArtist _Artist;
         
 
         private void updateDisplay()
         {
             txtName.Enabled = txtName.Text == "";
-            if (_SortOrder == 0)
+            if (_Artist.WorksList.SortOrder == 0)
             {
                 _Artist.WorksList.SortByName();
                 rbByName.Checked = true;
@@ -115,7 +115,7 @@ namespace Version_1_C
 
         private void rbByDate_CheckedChanged(object sender, EventArgs e)
         {
-            _SortOrder = Convert.ToByte(rbByDate.Checked);
+            _Artist.WorksList.SortOrder = Convert.ToByte(rbByDate.Checked);
             updateDisplay();
         }
 
